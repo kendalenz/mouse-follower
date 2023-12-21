@@ -3,6 +3,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
+      <h1>test</h1>
        <svg width="960" height="500">
       <circle 
         cx="480" 
