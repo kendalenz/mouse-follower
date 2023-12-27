@@ -4399,24 +4399,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 var Home = function Home() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "test"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
-    width: "960",
-    height: "500"
+  var width = 960;
+  var height = 500;
+  var centerX = width / 2;
+  var centerY = height / 2;
+  var strokeWidth = 30;
+  var eyeOffsetX = 90;
+  var eyeOffsetY = 100;
+  var eyeRadius = 50;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+    width: width,
+    height: height
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-    cx: "480",
-    cy: "250",
-    r: "245",
+    cx: centerX,
+    cy: centerY,
+    r: centerY - strokeWidth / 2,
     fill: "yellow",
     stroke: "black",
-    strokeWidth: "10"
+    strokeWidth: strokeWidth
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-    cx: "350",
-    cy: "180",
-    r: "50"
+    cx: centerX - eyeOffsetX,
+    cy: centerY - eyeOffsetY,
+    r: eyeRadius
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-    cx: "600",
-    cy: "180",
-    r: "50"
+    cx: centerX + eyeOffsetX,
+    cy: centerY - eyeOffsetY,
+    r: eyeRadius
   })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
