@@ -4385,6 +4385,62 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./src/Components/BackGroundCircle.js":
+/*!********************************************!*\
+  !*** ./src/Components/BackGroundCircle.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BackGroundCircle: () => (/* binding */ BackGroundCircle)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var BackGroundCircle = function BackGroundCircle(_ref) {
+  var radius = _ref.radius,
+    strokeWidth = _ref.strokeWidth;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+    r: radius,
+    fill: "yellow",
+    stroke: "black",
+    strokeWidth: strokeWidth
+  });
+};
+
+/***/ }),
+
+/***/ "./src/Components/Eyes.js":
+/*!********************************!*\
+  !*** ./src/Components/Eyes.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Eyes: () => (/* binding */ Eyes)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var Eyes = function Eyes(_ref) {
+  var eyeOffsetX = _ref.eyeOffsetX,
+    eyeOffsetY = _ref.eyeOffsetY,
+    eyeRadius = _ref.eyeRadius;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+    cx: -eyeOffsetX,
+    cy: -eyeOffsetY,
+    r: eyeRadius
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
+    cx: eyeOffsetX,
+    cy: -eyeOffsetY,
+    r: eyeRadius
+  }));
+};
+
+/***/ }),
+
 /***/ "./src/Components/Home.js":
 /*!********************************!*\
   !*** ./src/Components/Home.js ***!
@@ -4398,6 +4454,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3 */ "./node_modules/d3/src/index.js");
+/* harmony import */ var _BackGroundCircle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BackGroundCircle */ "./src/Components/BackGroundCircle.js");
+/* harmony import */ var _Eyes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Eyes */ "./src/Components/Eyes.js");
+/* harmony import */ var _Mouth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Mouth */ "./src/Components/Mouth.js");
+
+
+
 
 
 var Home = function Home() {
@@ -4411,32 +4473,50 @@ var Home = function Home() {
   var eyeRadius = 40;
   var mouthWidth = 20;
   var mouthRadius = 140;
-  var mouthArc = (0,d3__WEBPACK_IMPORTED_MODULE_1__.arc)().innerRadius(mouthRadius).outerRadius(mouthRadius + mouthWidth).startAngle(Math.PI / 2).endAngle(Math.PI * 3 / 2);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
     width: width,
     height: height
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("g", {
     transform: "translate(".concat(centerX, ",").concat(centerY, ")")
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-    // cx={centerX}
-    // cy={centerY}
-    r: centerY - strokeWidth / 2,
-    fill: "yellow",
-    stroke: "black",
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_BackGroundCircle__WEBPACK_IMPORTED_MODULE_2__.BackGroundCircle, {
+    radius: centerY - strokeWidth / 2,
     strokeWidth: strokeWidth
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-    cx: -eyeOffsetX,
-    cy: -eyeOffsetY,
-    r: eyeRadius
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-    cx: eyeOffsetX,
-    cy: -eyeOffsetY,
-    r: eyeRadius
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-    d: mouthArc()
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Eyes__WEBPACK_IMPORTED_MODULE_3__.Eyes, {
+    eyeOffsetX: eyeOffsetX,
+    eyeOffsetY: eyeOffsetY,
+    eyeRadius: eyeRadius
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Mouth__WEBPACK_IMPORTED_MODULE_4__.Mouth, {
+    mouthWidth: mouthWidth,
+    mouthRadius: mouthRadius
   }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+/***/ }),
+
+/***/ "./src/Components/Mouth.js":
+/*!*********************************!*\
+  !*** ./src/Components/Mouth.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Mouth: () => (/* binding */ Mouth)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3 */ "./node_modules/d3/src/index.js");
+
+
+var Mouth = function Mouth(_ref) {
+  var mouthRadius = _ref.mouthRadius,
+    mouthWidth = _ref.mouthWidth;
+  var mouthArc = (0,d3__WEBPACK_IMPORTED_MODULE_1__.arc)().innerRadius(mouthRadius).outerRadius(mouthRadius + mouthWidth).startAngle(Math.PI / 2).endAngle(Math.PI * 3 / 2);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    d: mouthArc()
+  });
+};
 
 /***/ }),
 

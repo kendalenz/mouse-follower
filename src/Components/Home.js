@@ -1,5 +1,8 @@
 import React from 'react';
 import { arc } from 'd3';
+import { BackGroundCircle } from './BackGroundCircle';
+import { Eyes } from './Eyes';
+import { Mouth } from './Mouth';
 
 const Home = () => {
 
@@ -14,38 +17,13 @@ const Home = () => {
   const mouthWidth = 20;
   const mouthRadius = 140;
 
-  const mouthArc = arc()
-  .innerRadius(mouthRadius)
-  .outerRadius(mouthRadius + mouthWidth)
-  .startAngle(Math.PI / 2)
-  .endAngle(Math.PI * 3/2);
-
   return (
     <div>
       <svg width={width} height={height}>
         <g transform={`translate(${centerX},${centerY})`}>
-          <circle 
-            // cx={centerX}
-            // cy={centerY}
-            r={centerY - strokeWidth / 2}
-            fill="yellow"
-            stroke="black"
-            strokeWidth={strokeWidth}
-          >
-          </circle>
-          <circle
-            cx={- eyeOffsetX}
-            cy={- eyeOffsetY}
-            r={eyeRadius}
-          >
-          </circle>
-          <circle
-            cx={eyeOffsetX}
-            cy={- eyeOffsetY}
-            r={eyeRadius}
-          >
-          </circle>
-          <path d={mouthArc()}/>
+          <BackGroundCircle radius={centerY - strokeWidth / 2} strokeWidth={strokeWidth}/>
+          <Eyes eyeOffsetX={eyeOffsetX} eyeOffsetY={eyeOffsetY} eyeRadius={eyeRadius}/>
+          <Mouth mouthWidth={mouthWidth} mouthRadius={mouthRadius}/>
         </g>
       </svg>
     </div>
