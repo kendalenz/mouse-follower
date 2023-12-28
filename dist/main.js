@@ -4535,23 +4535,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Face__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Face */ "./src/Components/Face.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! d3 */ "./node_modules/d3/src/index.js");
 
 
+
+var width = 166;
+var height = 166;
+var array = (0,d3__WEBPACK_IMPORTED_MODULE_2__.range)(100);
 var Home = function Home() {
-  var width = 960;
-  var height = 500;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Face__WEBPACK_IMPORTED_MODULE_1__.Face, {
-    width: width,
-    height: height,
-    centerX: width / 2,
-    centerY: height / 2,
-    strokeWidth: 10,
-    eyeOffsetX: 90,
-    eyeOffsetY: 100,
-    eyeRadius: 40,
-    mouthWidth: 20,
-    mouthRadius: 140
-  }));
+  return array.map(function () {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Face__WEBPACK_IMPORTED_MODULE_1__.Face, {
+      width: width,
+      height: height,
+      centerX: width / 2,
+      centerY: height / 2,
+      strokeWidth: 10,
+      eyeOffsetX: 30,
+      eyeOffsetY: 30,
+      eyeRadius: 10 + Math.random() * 5,
+      mouthWidth: 10,
+      mouthRadius: 40
+    });
+  });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
 
