@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const width = 960;
 const height = 500;
-const circleX = width / 2;
-const cicleY = height / 2;
 const circleRadius = 30;
+const initialMousePosition = { x: width / 2, y: height / 2};
 
-const handleMouseMove = (event) => {
-  const {clientX, clientY} = event;
-  console.log(event.clientX)
-  console.log(event.clientY)
+const Home = () => { 
+  const [mousePosition, setMousePosition] = useState(initialMousePosition);
+
+  const handleMouseMove = (event) => {
+    const {clientX, clientY} = event;
+    setMousePosition({ x: clientX, y: clientY })
+  }
+
+  return (
+    <div>
+      <svg width={width} height={height} onMouseMove={handleMouseMove}>
+        <circle
+          cx={mousePosition.x}
+          cy={mousePosition.y}
+          r={circleRadius}
+        >
+        </circle>
+      </svg>
+    </div>
+  )
 }
-
-const Home = () => (
-  <div>
-    <svg width={width} height={height} onMouseMove={handleMouseMove}>
-      <circle
-        cx={circleX}
-        cy={cicleY}
-        r={circleRadius}
-      >
-      </circle>
-    </svg>
-  </div>
-);
 
 export default Home;
