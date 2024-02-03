@@ -4403,10 +4403,17 @@ var height = 500;
 var circleX = width / 2;
 var cicleY = height / 2;
 var circleRadius = 30;
+var handleMouseMove = function handleMouseMove(event) {
+  var clientX = event.clientX,
+    clientY = event.clientY;
+  console.log(event.clientX);
+  console.log(event.clientY);
+};
 var Home = function Home() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
     width: width,
-    height: height
+    height: height,
+    onMouseMove: handleMouseMove
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
     cx: circleX,
     cy: cicleY,
