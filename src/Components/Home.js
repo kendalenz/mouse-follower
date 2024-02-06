@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const width = 960;
-const height = 500;
+const width = 2000;
+const height = 3000;
 const circleRadius = 30;
 const initialMousePosition = { x: width / 2, y: height / 2};
 
