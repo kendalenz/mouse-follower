@@ -8,7 +8,7 @@ const initialMousePosition = { x: width / 2, y: height / 2};
 const Home = () => { 
   const [mousePosition, setMousePosition] = useState(initialMousePosition);
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = event => {
     const {clientX, clientY} = event;
     setMousePosition({ x: clientX, y: clientY })
   }
