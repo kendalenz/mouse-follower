@@ -4416,14 +4416,14 @@ var Home = function Home() {
     _useState2 = _slicedToArray(_useState, 2),
     mousePosition = _useState2[0],
     setMousePosition = _useState2[1];
-  var handleMouseMove = function handleMouseMove(event) {
+  var handleMouseMove = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
     var clientX = event.clientX,
       clientY = event.clientY;
     setMousePosition({
       x: clientX,
       y: clientY
     });
-  };
+  }, [setMousePosition]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
     width: width,
     height: height,
